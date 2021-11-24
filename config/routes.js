@@ -47,7 +47,7 @@ const somaRomano = (valores) => {
 const subtracaoRomano = (valores) => {
 	let aux = valores[0] 
 	let valoresEmDecimal = valores
-
+    let sub = 0
 	for(i = 1; i < valoresEmDecimal.length; i++)
     {
 		sub = aux - valoresEmDecimal[i]
