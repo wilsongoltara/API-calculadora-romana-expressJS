@@ -21,7 +21,7 @@ routes.get('/calculadora', (_, res) => {
     res.send("Calculadora Romana");
 })
 
-//Chama funcao sumRoman passando valores recebidos
+//Chama funcao sumRomano passando valores recebidos
 // e retorna soma em algarismo arábico e romano
 routes.get('/calculadora/soma/', (req, res) => {
     const body = req.body;
