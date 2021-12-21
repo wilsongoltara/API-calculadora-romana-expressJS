@@ -4,12 +4,12 @@ const subRoman = require('./subRoman');
 module.exports = (app) => {
     app.get('/api/calculadora/operacaoSubtracao', (req, res) => {
         const body = req.body['numeros'];
-        let algarismos = [], i;
+        let algarismos = [];
         let sub = Math.abs(subRoman(body));
         let result = ``;
         sub = convertToRoman(sub);
           
-        for(i in body)
+        for(let i in body)
         {
             algarismos.push(convertToRoman(body[i]));
             result += `${algarismos[i]} - `;
