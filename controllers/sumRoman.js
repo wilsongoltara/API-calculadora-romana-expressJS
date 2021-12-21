@@ -4,9 +4,8 @@ function sumRoman(values) {
 	let valoresEmDecimal = values;
 
 	for (let i = 0; i < valoresEmDecimal.length; i++) {
-		acumulador += valoresEmDecimal[i];
+		acumulador += parseInt(valoresEmDecimal[i]);
 	}
-    console.log(acumulador);
 	return acumulador;
 }
 
