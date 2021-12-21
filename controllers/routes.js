@@ -1,38 +1,23 @@
-const express = require('express');
+/* const express = require('express');
 const convertToRoman = require('./convertToRoman');
 const sumRoman = require('./sumRoman');
 const subRoman = require('./subRoman');
 const routes = express.Router();
 
 //Aviso erro ao entrar na pasta raiz
-routes.get('/', (_, res) => { 
+/* routes.get('/', (_, res) => { 
     res.status(404).send("Not Found");
-})
+}); */
+ 
 
-//Responde com um mensagem sobre o que é a API
-routes.get('/about', (_, res) => {
-    res.send({
-        msg:"API Calculadora romana"
-    });
-})
-
-//Responde com uma menssagem. 
-routes.get('/calculadora', (_, res) => {
-    res.send("Calculadora Romana");
-})
 
 //Chama funcao sumRomano passando valores recebidos
 // e retorna soma em algarismo arábico e romano
-routes.get('/calculadora/soma/', (req, res) => {
-    const body = req.body;
-    const sum = sumRoman(body);
-    res.send({"soma": sum,
-            "soma-romana:":convertToRoman(sum)});
-})
+
 
 //Chama funcao subRoman passando valores recebidos
 // e retorna soma em algarismo arábico e romano
-routes.get('/calculadora/subtracao', (req, res) => {
+/* routes.get('/calculadora/subtracao', (req, res) => {
     const body = req.body;
     const sub = Math.abs(subRoman(body));
     res.send({"subtracao": sub,
@@ -81,4 +66,4 @@ routes.get('/calculadora/operacao/subtracao', (req, res) => {
     res.send(`${result}` + `= ${sub}`);
 })
 
-module.exports = routes;
+ */
