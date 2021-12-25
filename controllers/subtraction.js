@@ -1,15 +1,14 @@
-const subRoman = require('./subRoman');
-const convertToRoman = require('./convertToRoman');;
+const Calculator = require('../models/calculator');
 
 module.exports = (app) => {
     app.get('/api/calculadora/subtracao', (_, res) => {
-        res.send("Subtração!")
+        res.status(200).json({
+            "numeros":"[Digite os numeros]"
+        });
     });
 
     app.post('/api/calculadora/subtracao', (req, res) => {
         const body = req.body;
-        const sub = Math.abs(subRoman(body['numeros']));
-        res.send({"subtracao": sub,
-                "sub-romana:":convertToRoman(sub)});
+        Calculator.subRoman(body, res);
     });
 }

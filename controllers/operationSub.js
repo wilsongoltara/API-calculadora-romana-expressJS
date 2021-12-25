@@ -1,11 +1,11 @@
+const Calculator = require('../models/calculator');
 const convertToRoman = require('./convertToRoman');
-const subRoman = require('./subRoman');
 
 module.exports = (app) => {
     app.get('/api/calculadora/operacaoSubtracao', (req, res) => {
         const body = req.body['numeros'];
         let algarismos = [];
-        let sub = Math.abs(subRoman(body));
+        let sub = Math.abs(Calculator.subRoman(body));
         let result = ``;
         sub = convertToRoman(sub);
           

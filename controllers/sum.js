@@ -1,15 +1,14 @@
-const sumRoman = require('./sumRoman');
-const convertToRoman = require('./convertToRoman');
+const Calculator = require('../models/calculator');
 
 module.exports = (app) => {
     app.get('/api/calculadora/soma/', (_, res) => {
-        res.send("Soma!");
+        res.json({
+            "numeros":"[Digite os números]"
+        });
     });
 
     app.post('/api/calculadora/soma/', (req, res) => {
         const body = req.body;
-        const sum = sumRoman(body['numeros']);
-        res.json({"soma": sum,
-                "soma-romana:":convertToRoman(sum)});
+        Calculator.sumRoman(body, res);
     });
 }
