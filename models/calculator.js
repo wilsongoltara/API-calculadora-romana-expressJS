@@ -1,4 +1,4 @@
-const convertToRoman = require("../controllers/convertToRoman");
+const convertToRoman = require("./convertToRoman");
 
 class Calculator {
     sumRoman(body, res) {
@@ -17,7 +17,7 @@ class Calculator {
         const numbers = body['numeros'];
         let aux = numbers[0];
         let sub = 0;
-        for (let i = 1; i < numbers.length; i++) {
+        for (let i in numbers) {
             sub = Math.abs(aux - numbers[i]);
             aux = sub;
         }
@@ -44,12 +44,30 @@ class Calculator {
         const numbers = body["numeros"]
         let algarismos = [];
         let result = ``;
+        let sum = 0;
         
         for (let i in numbers) {
             algarismos.push(convertToRoman(numbers[i]));
             result += `${algarismos[i]} + `;
+            sum += parseInt(numbers[i]);
         }
-        res.json(`${result} = ${convertToRoman(Calculator.sumRoman(numbers))}`);
+        res.status(200).json({"operação":`${result} = ${convertToRoman(sum)}`});
+    }
+
+    operationSub(body, res) {
+        let numbers = body['numeros']; 
+        let algarismos = [];
+        let sub = 0;
+        let aux = numbers[0];
+        let result = ``;
+          
+        for(let i in numbers) {
+            algarismos.push(convertToRoman(numbers[i]));
+            result += `${algarismos[i]} - `;
+            sub = Math.abs(aux - numbers[i]);
+            aux = sub;
+        }
+        res.status(200).json({"operacao":`${result}` + `= ${convertToRoman(sub)}`});
     }
 }
 
