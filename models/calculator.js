@@ -4,9 +4,8 @@ class Calculator {
     sumRoman(body, res) {
         const numbers = body['numeros'];
         let sum = 0;
-        for(let i in numbers) {
-            sum += parseInt(numbers[i]);
-        }
+        numbers.map((number) => {sum += parseFloat(number)});
+        
         res.status(200).json({
             "sum": `${sum}`,
             "sum-roman": convertToRoman(sum)
@@ -15,12 +14,14 @@ class Calculator {
 
     subRoman(body, res) {
         const numbers = body['numeros'];
-        let aux = numbers[0];
+        let aux = numbers[1];
         let sub = 0;
-        for (let i in numbers) {
-            sub = Math.abs(aux - numbers[i]);
+        
+        numbers.map((number) => {
+            sub = Math.abs(aux - number);
             aux = sub;
-        }
+        });
+
         res.status(200).json({
             "subtracao": `${sub}`,
             "sub-romana:": convertToRoman(sub)
@@ -30,10 +31,11 @@ class Calculator {
     convertNumbers(body, res) {
         const numbers = body['numeros'];
         let algarismos = [];
-        for (let i in numbers)
-        {
-          algarismos.push(convertToRoman(numbers[i]));
-        }
+        
+        numbers.map((number) => {
+            algarismos.push(convertToRoman(number));
+        });
+        
         res.status(200).json({
             "algarismos": `${algarismos}`,
             "numeros": `${numbers}`
