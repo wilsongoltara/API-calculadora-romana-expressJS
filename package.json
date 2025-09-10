@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "API para calcular algarismos romanos",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"

@@ -1,6 +1,8 @@
-const customExpress = require('./config/customExpress');
-const app = customExpress();
+import { configExpress } from './src/config/configExpress.js';
 
-app.listen(3000, () => {
-    console.log("Express start at http://localhost:3000");
+const { app } = configExpress();
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
 });
