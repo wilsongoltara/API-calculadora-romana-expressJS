@@ -4,7 +4,7 @@ import prettierConfig from 'eslint-config-prettier';
 
 export default defineConfig([
   {
-    files: ['**/*.js', 'src/*.js'],
+    files: ['**/*.js'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -38,4 +38,3 @@ export default defineConfig([
     },
   },
 ]);
-``
