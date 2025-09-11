@@ -1,7 +1,7 @@
-import { convertNumbers } from './convertNumbers';
-import { operationSub } from './operationSub';
-import { operationSum } from './operationSum';
-import { subRoman } from './subRoman';
-import { sumRoman } from './sumRoman';
+import { convertNumbers } from './convertNumbers.js';
+import { operationSub } from './operationSub.js';
+import { operationSum } from './operationSum.js';
+import { subRoman } from './subRoman.js';
+import { sumRoman } from './sumRoman.js';
 
 export { convertNumbers, operationSub, operationSum, subRoman, sumRoman };

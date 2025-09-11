@@ -1,4 +1,4 @@
-import { convertToRoman } from './index.js';
+import { convertToRoman } from './convertToRoman.js';
 
 export function convertNumbers(body) {
   const numbers = body['numeros'];

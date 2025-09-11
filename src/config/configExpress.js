@@ -1,5 +1,6 @@
 import express from 'express';
 import routes from '../routes/index.js';
+import { setupSwagger } from './swagger.js';
 
 export function configExpress() {
   const app = express();
@@ -10,6 +11,9 @@ export function configExpress() {
 
   // Routes
   app.use('/', routes);
+
+  // Swagger
+  setupSwagger(app);
 
   // Error middleware
   app.use((err, _req, res, _next) => {

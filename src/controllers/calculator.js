@@ -30,6 +30,35 @@ routerCalculator.post('/subRoman', validateNumbers, ({ body }, res) => {
   res.status(200).json(result);
 });
 
+/**
+ * @swagger
+ * /sumRoman:
+ *   post:
+ *     summary: Soma números e retorna resultado em romano
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               numeros:
+ *                 type: array
+ *                 items:
+ *                   type: number
+ *             example:
+ *               numeros: [10, 5]
+ *     responses:
+ *       200:
+ *         description: Resultado da soma em decimal e romano
+ *         content:
+ *           application/json:
+ *             example:
+ *               sum: 15
+ *               sumRoman: XV
+ *       400:
+ *         description: Parâmetros inválidos
+ */
 routerCalculator.post('/sumRoman', validateNumbers, ({ body }, res) => {
   const result = sumRoman(body);
   res.status(200).json(result);
