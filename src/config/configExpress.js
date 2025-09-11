@@ -1,4 +1,5 @@
 import express from 'express';
+import routes from '../routes/index.js';
 
 export function configExpress() {
   const app = express();
@@ -6,6 +7,9 @@ export function configExpress() {
   // Global middlewares
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json({ extended: true }));
+
+  // Routes
+  app.use('/', routes);
 
   // Error middleware
   app.use((err, _req, res, _next) => {

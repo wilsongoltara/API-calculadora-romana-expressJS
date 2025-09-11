@@ -1,7 +1,11 @@
-module.exports = (app) => {
-  app.get('/api/about', (_, res) => {
-    res.json({
-      msg: 'Calculadora romana',
-    });
+import { Router } from 'express';
+
+const routerAbout = Router();
+
+app.get('/about', (_, res) => {
+  res.json({
+    msg: 'Calculadora romana',
   });
-};
+});
+
+export { routerAbout };
