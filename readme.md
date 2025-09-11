@@ -43,6 +43,15 @@ Modo produção:
 npm start
 ```
 
+## 📖 Documentação Swagger
+
+Acesse em:
+👉 http://localhost:3000/api-docs
+
+## 🧪 Testes (em breve)
+
+Testes unitários com Jest serão adicionados.
+
 A API estará disponível em:
 👉 http://localhost:3000
 
